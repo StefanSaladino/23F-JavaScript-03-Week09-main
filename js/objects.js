@@ -66,7 +66,7 @@ Note how this breaks the greeting and bio functions - update the greeting functi
 objects that are built this way are often referred to as associative arrays */
 
 /* STEP 8: You can also set members of an object - try changing the person's name, and age */
-person.name.firstName = "John";
+person.name.firstName = "Jon";
 person.name.lastName = "Snow";
 console.log(person); 
 
@@ -77,7 +77,7 @@ console.log(eyeColour);
 
 /* STEP 9b: Add a new function called 'goodbye' to the person object and try it by typing person.goodbye into the console */
 person.goodbye = function() {
-    alert(`This is ${this.name.firstName.lastName} signing off.`);
+    alert(`This is ${this.name.firstName} ${this.name.lastName} signing off.`);
 }
 
 /* STEP 10: We can also dynamically set both names and values for objects… */
