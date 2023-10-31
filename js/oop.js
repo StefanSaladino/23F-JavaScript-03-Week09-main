@@ -83,12 +83,14 @@ var anotherCar = Object.create(car);
 function Hamburger(bun, toppings, protein, noOfPatties, condiments){
     this.bun = bun,
     this.toppings = toppings,
+    this.cheese = cheese,
     this.protein = protein,
     this.noOfPatties = noOfPatties,
     this.condiments = condiments,
     this.bio = function(){
         return(`Bun type = ${this.bun}/
         \nToppings = ${this.toppings}/
+        \nCheeses= ${this.cheese}/
         \nType of patty = ${this.protein}/
         \nNumber of Patties = ${this.noOfPatties}/
         \nCondiments = ${this.condiments}/
@@ -96,7 +98,7 @@ function Hamburger(bun, toppings, protein, noOfPatties, condiments){
     }
 }
 
-var burger = new Hamburger ("white bread bun", ["lettuce", " tomatoes", " onions"],"chicken", 
+var burger = new Hamburger ("white bread bun", ["lettuce", " tomatoes", " onions"], "Monterrey Jack", "chicken", 
 3, ["ketchup", " mustard"])
 
 console.log(burger.bio());
