@@ -80,7 +80,7 @@ var anotherCar = Object.create(car);
 */
 // add some extra if you want
 // Make sure that the function allows for the output of a sentence that describes the hamburger, too
-function Hamburger(bun, toppings, protein, noOfPatties, condiments){
+function Hamburger(bun, toppings, cheese, protein, noOfPatties, condiments){
     this.bun = bun,
     this.toppings = toppings,
     this.cheese = cheese,
