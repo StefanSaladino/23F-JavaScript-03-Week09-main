@@ -3,7 +3,32 @@ const output = document.getElementById('output');
 /* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), 
 then open this page in a browser and enter 'person' in the console */
 
+var person = {};
+
 /* STEP 2a: Add other data items to the above object, like name, age, gender, address, and interests */
+person={
+    name: {
+        firstName: "Stefan", 
+        lastName: "Saladino",
+},
+    age: 30,
+    gender: "male",
+    address: {
+        streetNo: 123,
+        streetName: "Fake St.",
+        city: "Not Real"
+    },
+    interests: [" int one", " int two", " int three"],
+    greeting: function(){
+        alert(`hello ${this.name.firstName} ${this.name.lastName}`);
+    },
+    bio: function(){
+        return(`age = ${this.age}\n
+        gender = ${this.gender}\n
+        interests = ${this.interests}\n
+        `)
+    }
+};
 
 /* STEP 2b: Enter the following directly into the console:
     person.name[0]
@@ -19,15 +44,18 @@ called "greeting" that creates an alert dialog, then type person.greeting() into
     and interests in a string that is output to an alert dialog */
 
 // The object above is called an 'object literal' - in that we build each part of the object manually, 
-// rather than instatiating it from a class (which we will cover later). 
+// rather than instantiating it from a class (which we will cover later). 
 // Objects can be easier to work with than arrays, as you can name each element
 
 /* STEP 5a: Dot syntax allows you to access the parts of an object - the first part is the namespace, 
 and subsequent parts are used to access things encapsulated within the object. Access the name, age, 
 and gender of the person object, and put it inside the <p id="output"></p>. */
+output.textContent = person.name[0];
+output.textContent += ` ${person.age}`;
 
 /* STEP 5b: Update the above bio() function inside the person object to return 
 the string, instead of the alert(). */
+output.textContent = person.bio();
 
 /* STEP 6a: An object can even contain another object - update object person above to include a name object. 
 Note how this breaks the greeting and bio functions - update the greeting function to use this sub-namespace */
@@ -38,11 +66,19 @@ Note how this breaks the greeting and bio functions - update the greeting functi
 objects that are built this way are often referred to as associative arrays */
 
 /* STEP 8: You can also set members of an object - try changing the person's name, and age */
+person.name.firstName = "John";
+person.name.lastName = "Snow";
+console.log(person); 
 
 
 /* STEP 9a: It it also possible to add new members to an object - include eye color - and type person.eyes in the console */
+person.eyeColour = "green";
+console.log(eyeColour);
 
 /* STEP 9b: Add a new function called 'goodbye' to the person object and try it by typing person.goodbye into the console */
+person.goodbye = function() {
+    alert(`This is ${this.name.firstName.lastName} signing off.`);
+}
 
 /* STEP 10: We can also dynamically set both names and values for objects… */
 
@@ -52,6 +88,19 @@ each with a name, and a function that outputs the name */
 
 /* STEP 11b: Call up both person1.hello() and person2.hello() 
 in the console to see how 'this' is specific to each object */
+var person1={
+    name:"Dude",
+    hello: function(){
+        alert(`Hello I am ${this.name}`);
+    }
+}
+
+var person2={
+    name:"Guy",
+    hello: function(){
+        alert(`Hello I am ${this.name}`);
+    }
+}
 
 // You have already been using objects all along:
 let myString = 'Words, words, words.'; // this creates an instance of the class String
